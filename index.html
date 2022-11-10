@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./vendor/prism.css">
+    <script src="./vendor/prism.js"></script>
+  </head>
+  <body>
+  </head>
+  <body>
+    <div class="center">
+      <h1>Generate...</h1>
+      <form action="">
+        <label for="component-type">UI Comnponent:</label>
+        <select
+          class="list-components"
+          id="component-type"
+          name="cars"
+          name="TypeSwitcher"
+          onchange="selectChanged()"
+        >
+          <option value="">Please Select</option>
+          <option value="accordion">Accordion</option>
+          <option value="alert">Alert</option>
+          <option value="avatar">Avatar</option>
+          <option value="button">Button</option>
+          <option value="button-group">Button Group</option>
+          <option value="card">Card</option>
+          <option value="checkbox">Checkbox</option>
+          <option value="dropdown-menu">Dropdown Menu</option>
+          <option value="form">Form</option>
+        </select>
+      </form>
+    </div>
+
+    <div id="button" class="center">
+        <div id="button-selector">
+          <form action="">
+            <label for="button-type">Button text</label>
+              <!-- <input type="text" id="button-text" onkeyup="setButtonText()"></input> -->
+              <input type="text" id="button-text"></input>
+          </form>
+        </div>
+      </div>
+
+      <div id="button-code">
+     <pre> <code class="language-html">
+        &lt;p&gt; I am HTML&lt;/p&gt;
+        &lt;script&gt;
+          console.log(&quot;I am JS&quot;);
+        &lt;/script&gt;
+     </code></pre>
+    </div>
+
+
+
+
+
+    <div id="form" class="center">
+      <div id="form-selector">
+        <form action="">
+          <label for="form-type">Form "action"</label>
+            <input type="text"></input>
+            <br />
+          <label for="form-type">Placeholder:</label>
+          <select
+            class="list-components"
+            id="form-type"
+            name="cars"
+            name="TypeSwitcher"
+            onchange="setForm()"
+          >
+            <option value="accordion">Accordion</option>
+            <option value="alert">Alert</option>
+            <option value="avatar">Avatar</option>
+            <option value="button">Button</option>
+            <option value="button-group">Button Group</option>
+            <option value="card">Card</option>
+            <option value="checkbox">Checkbox</option>
+            <option value="dropdown-menu">Dropdown Menu</option>
+            <option value="form">Form</option>
+          </select>
+        </form>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

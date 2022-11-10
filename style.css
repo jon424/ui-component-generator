@@ -1,0 +1,12 @@
+.center {
+  text-align: center;
+}
+
+#button,
+#button-code {
+  display: none;
+}
+
+#form {
+  display: none;
+}
