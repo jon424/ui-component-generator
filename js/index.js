@@ -14,6 +14,18 @@ function selectChanged() {
   form.style.display = sel.value == "form" ? "block" : "none";
 }
 
+//multi-select dropdown menu
+const expanded = false;
+function showCheckboxes() {
+  const checkboxes = document.getElementById("checkboxes");
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+  }
+}
 function makeButton() {
   //remove button if it exists
   const previousBtn = document.getElementsByClassName("generated-button");
