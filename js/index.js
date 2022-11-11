@@ -1,16 +1,14 @@
-function selectChanged() {
-  var sel = document.getElementById("component-type");
-  let form = document.getElementById("form");
-  let button = document.getElementById("button");
-  let buttonCode = document.getElementById("button-code");
+var sel = document.getElementById("component-type");
+let form = document.getElementById("form");
+let buttonDiv = document.getElementById("button");
+let buttonCode = document.getElementById("button-code");
 
+function selectChanged() {
   if (sel.value == "button") {
-    button.style.display = "block";
-    buttonCode.style.display = "block";
+    buttonDiv.style.display = "block";
     this.makeButton();
   } else {
-    button.style.display = "none";
-    buttonCode.style.display = "none";
+    buttonDiv.style.display = "none";
   }
 
   form.style.display = sel.value == "form" ? "block" : "none";
@@ -18,15 +16,19 @@ function selectChanged() {
 
 function makeButton() {
   //remove button if it exists
-  this.button.removeChild(this.button.lastChild);
+  buttonDiv.removeChild(buttonDiv.lastChild);
 
-  const generateButton = document.createElement("button");
-  generateButton.classList.add("generate-button");
-  this.button.appendChild(generateButton);
+  const generatedButton = document.createElement("button");
+  generatedButton.classList.add("generated-button");
+  buttonDiv.appendChild(generatedButton);
 
+  var buttonCode = document.createElement("div");
+  buttonDiv.appendChild(buttonCode);
   document.getElementById("button-text").addEventListener("keyup", () => {
     var x = document.getElementById("button-text").value;
-    generateButton.innerHTML = x;
-    console.log(x);
+    generatedButton.innerHTML = x;
+    buttonCode.innerHTML = `<pre><code class="language-html">
+    &lt;button&gt;${x}&lt;/button&gt;
+  </code></pre>`;
   });
 }
