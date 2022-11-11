@@ -1,10 +1,9 @@
-var sel = document.getElementById("component-type");
+const sel = document.getElementById("component-type");
 let form = document.getElementById("form");
 let buttonDiv = document.getElementById("button");
 let buttonCode = document.getElementById("button-code");
 
 function selectChanged() {
-  //TODO: change to switch statement
   if (sel.value == "button") {
     buttonDiv.style.display = "block";
     this.makeButton();
@@ -17,20 +16,28 @@ function selectChanged() {
 
 function makeButton() {
   //remove button if it exists
-  buttonDiv.removeChild(buttonDiv.lastChild);
+  const previousBtn = document.getElementsByClassName("generated-button");
+  const previousBtnCode = document.getElementsByClassName("button-code");
+  while (previousBtn.length > 0 && previousBtnCode.length > 0) {
+    previousBtn[0].parentNode.removeChild(previousBtn[0]);
+    previousBtnCode[0].parentNode.removeChild(previousBtnCode[0]);
+  }
 
+  //gen btn
   const generatedButton = document.createElement("button");
   generatedButton.classList.add("generated-button");
   buttonDiv.appendChild(generatedButton);
 
-  var buttonCode = document.createElement("div");
+  //gen btn code block
+  const buttonCode = document.createElement("div");
+  buttonCode.classList.add("button-code");
   buttonDiv.appendChild(buttonCode);
   document.getElementById("button-text").addEventListener("keyup", () => {
-    var x = document.getElementById("button-text").value;
-    generatedButton.innerHTML = x;
+    const inputTextVal = document.getElementById("button-text").value;
+    generatedButton.innerHTML = inputTextVal;
 
     buttonCode.innerHTML = `<pre class="language-html"><code class="language-html token tag">
-  <span class="token punctuation">&lt;</span>button<span class="token punctuation">&gt;</span><span style="color: #000;">${x}</span><span class="token punctuation">&lt;/</span>button<span class="token punctuation">&gt;</span>
+  <span class="token punctuation">&lt;</span>button<span class="token punctuation">&gt;</span><span style="color: #000;">${inputTextVal}</span><span class="token punctuation">&lt;/</span>button<span class="token punctuation">&gt;</span>
 </code></pre>`;
   });
 }
