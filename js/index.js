@@ -18,9 +18,11 @@ function makeButton() {
   //remove button if it exists
   const previousBtn = document.getElementsByClassName("generated-button");
   const previousBtnCode = document.getElementsByClassName("button-code");
+  const inputBtnText = document.getElementById("button-text");
   while (previousBtn.length > 0 && previousBtnCode.length > 0) {
     previousBtn[0].parentNode.removeChild(previousBtn[0]);
     previousBtnCode[0].parentNode.removeChild(previousBtnCode[0]);
+    inputBtnText.value = "";
   }
 
   //gen btn
@@ -32,8 +34,8 @@ function makeButton() {
   const buttonCode = document.createElement("div");
   buttonCode.classList.add("button-code");
   buttonDiv.appendChild(buttonCode);
-  document.getElementById("button-text").addEventListener("keyup", () => {
-    const inputTextVal = document.getElementById("button-text").value;
+  inputBtnText.addEventListener("keyup", () => {
+    const inputTextVal = inputBtnText.value;
     generatedButton.innerHTML = inputTextVal;
 
     buttonCode.innerHTML = `<pre class="language-html"><code class="language-html token tag">
