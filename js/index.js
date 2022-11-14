@@ -15,9 +15,9 @@ function selectChanged() {
 }
 
 //multi-select dropdown menu
-const expanded = false;
+let expanded = false;
 function showCheckboxes() {
-  const checkboxes = document.getElementById("checkboxes");
+  let checkboxes = document.getElementById("checkboxes");
   if (!expanded) {
     checkboxes.style.display = "block";
     expanded = true;
