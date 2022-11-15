@@ -18,14 +18,7 @@ function selectChanged() {
 let expanded = false;
 function showCheckboxes(event) {
   let checkboxes = document.getElementById("checkboxes");
-  console.log("e.tar: ", event.target.tagName);
-
-  // if (event.target.tagName === "INPUT") {
-  //   alert("asdfasdf");
-  // }
-
   if (
-    // !expanded &&
     event.target.tagName === "INPUT" ||
     event.target.tagName === "DIV" ||
     event.target.tagName === "LABEL"
@@ -38,22 +31,6 @@ function showCheckboxes(event) {
     expanded = false;
     console.log(expanded);
   }
-}
-
-function hideCheckboxes(e) {
-  let checkboxes = document.getElementById("checkboxes");
-
-  let label = document.getElementsByTagName("label");
-  let input = document.querySelectorAll("#checkboxes > label > input");
-  let multiSelect = document.getElementsByClassName("multiselect");
-
-  // if (!e.currentTarget.contains(label)) {
-  // if (
-  //   // !e.currentTarget.contains(multiSelect) ||
-  //   e.currentTarget.contains(input)
-  // ) {
-  // checkboxes.style.display = "block";
-  // expanded = false;
 }
 
 function makeButton() {
