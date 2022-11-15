@@ -45,7 +45,7 @@ pre {
   border: 1px #dadada solid;
 }
 #checkboxes label {
-  display: block;
+  display: flex;
 }
 #checkboxes label:hover {
   background-color: #1e90ff;
