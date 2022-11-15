@@ -16,10 +16,20 @@ function selectChanged() {
 
 //multi-select dropdown menu
 let expanded = false;
-function showCheckboxes(e) {
+function showCheckboxes(event) {
   let checkboxes = document.getElementById("checkboxes");
+  console.log("e.tar: ", event.target.tagName);
 
-  if (!expanded) {
+  // if (event.target.tagName === "INPUT") {
+  //   alert("asdfasdf");
+  // }
+
+  if (
+    // !expanded &&
+    event.target.tagName === "INPUT" ||
+    event.target.tagName === "DIV" ||
+    event.target.tagName === "LABEL"
+  ) {
     checkboxes.style.display = "block";
     expanded = true;
     console.log(expanded + "is true");
@@ -42,8 +52,8 @@ function hideCheckboxes(e) {
   //   // !e.currentTarget.contains(multiSelect) ||
   //   e.currentTarget.contains(input)
   // ) {
-  checkboxes.style.display = "block";
-  expanded = false;
+  // checkboxes.style.display = "block";
+  // expanded = false;
 }
 
 function makeButton() {
