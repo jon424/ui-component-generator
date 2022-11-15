@@ -46,19 +46,20 @@
 
           
           
+                <!-- onblur="hideCheckboxes()" -->
          <div class="center">
-          <form>
+          <form tabindex="0" onclick="showCheckboxes()" onblur="hideCheckboxes()">
            <div class="multiselect">
-            <div class="selectBox" onclick="showCheckboxes()">
+            <div class="selectBox">
              <select>
               <option>Select and Option</option>
              </select>
              <div class="overSelect"></div>
             </div>
             <div id="checkboxes">
-             <label><input type="checkbox" id="1"/>One</label>
-             <label><input type="checkbox" id="2"/>Two</label>
-             <label><input type="checkbox" id="3"/>Three</label>
+             <label><input type="checkbox" class="checkbox-option" id="1"/>One</label>
+             <label><input type="checkbox" class="checkbox-option" id="2"/>Two</label>
+             <label><input type="checkbox" class="checkbox-option" id="3"/>Three</label>
             </div>
            </div>
           </form>

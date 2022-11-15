@@ -16,16 +16,39 @@ function selectChanged() {
 
 //multi-select dropdown menu
 let expanded = false;
-function showCheckboxes() {
+function showCheckboxes(e) {
   let checkboxes = document.getElementById("checkboxes");
+
   if (!expanded) {
     checkboxes.style.display = "block";
     expanded = true;
+    console.log(expanded);
   } else {
+    checkboxes.style.display = "none";
+    expanded = false;
+    console.log(expanded);
+  }
+}
+
+function hideCheckboxes(e) {
+  let checkboxes = document.getElementById("checkboxes");
+  // let checkboxes = document.getElementsByClassName("checkbox-option");
+
+  let label = document.getElementsByTagName("label");
+  // let input = document.querySelector("input[type='checkbox']");
+  let input = document.querySelector("label > input");
+  let multiSelect = document.getElementsByClassName("multiselect");
+
+  // if (!e.currentTarget.contains(label)) {
+  if (
+    !e.currentTarget.contains(multiSelect) ||
+    !e.currentTarget.contains(checkboxes)
+  ) {
     checkboxes.style.display = "none";
     expanded = false;
   }
 }
+
 function makeButton() {
   //remove button if it exists
   const previousBtn = document.getElementsByClassName("generated-button");
