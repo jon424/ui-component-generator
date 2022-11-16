@@ -18,14 +18,10 @@ function selectChanged() {
 let expanded = false;
 function showCheckboxes(event) {
   let checkboxes = document.getElementById("checkboxes");
-  if (
-    event.target.tagName === "INPUT" ||
-    event.target.tagName === "DIV" ||
-    event.target.tagName === "LABEL"
-  ) {
+
+  if (!expanded || event.target.tagName === "INPUT") {
     checkboxes.style.display = "block";
     expanded = true;
-    console.log(expanded + "is true");
   } else {
     checkboxes.style.display = "none";
     expanded = false;
