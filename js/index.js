@@ -2,6 +2,7 @@ const sel = document.getElementById("component-type");
 let form = document.getElementById("form");
 let buttonDiv = document.getElementById("button");
 let buttonCode = document.getElementById("button-code");
+let uiComponentForm = document.getElementById("ui-component-form");
 
 function selectChanged() {
   if (sel.value == "button") {
@@ -10,7 +11,6 @@ function selectChanged() {
   } else {
     buttonDiv.style.display = "none";
   }
-
   form.style.display = sel.value == "form" ? "block" : "none";
 }
 
@@ -44,6 +44,7 @@ function makeButton() {
   const generatedButton = document.createElement("button");
   generatedButton.classList.add("generated-button");
   buttonDiv.appendChild(generatedButton);
+  uiComponentForm.appendChild(generatedButton);
 
   //gen btn code block
   const buttonCode = document.createElement("div");
