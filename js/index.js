@@ -59,3 +59,14 @@ function makeButton() {
 </code></pre>`;
   });
 }
+
+const picker = document.querySelector("hex-color-picker");
+picker.addEventListener("color-changed", (event) => {
+  // get updated color value
+  const newColor = event.detail.value;
+  console.log(newColor);
+  console.log("asdf");
+});
+
+// get current color value
+console.log(picker.color);
