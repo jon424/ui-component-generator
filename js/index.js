@@ -17,11 +17,21 @@ function selectChanged() {
 //multi-select dropdown menu
 let expanded = false;
 function showCheckboxes(event) {
+  console.log(event.target.classList);
   let checkboxes = document.getElementById("checkboxes");
 
-  if (!expanded || event.target.tagName === "INPUT") {
+  if (
+    !expanded ||
+    event.target.tagName === "INPUT" ||
+    event.target.tagName === "LABEL"
+  ) {
     checkboxes.style.display = "block";
     expanded = true;
+    event.stopPropagation();
+    document.onclick = function () {
+      checkboxes.style.display = "none";
+      expanded = false;
+    };
   } else {
     checkboxes.style.display = "none";
     expanded = false;
