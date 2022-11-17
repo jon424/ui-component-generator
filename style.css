@@ -51,7 +51,8 @@ pre {
   background-color: #1e90ff;
 }
 
-#color-picker {
+#btn-background-color-picker,
+#btn-text-color-picker {
   height: 150px;
   margin: auto;
   width: 150px;

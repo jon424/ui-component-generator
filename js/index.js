@@ -68,10 +68,18 @@ function makeButton() {
   <span class="token punctuation">&lt;</span>button<span class="token punctuation">&gt;</span><span style="color: #000;">${inputTextVal}</span><span class="token punctuation">&lt;/</span>button<span class="token punctuation">&gt;</span>
 </code></pre>`;
   });
-  const picker = document.querySelector("hex-color-picker");
-  picker.addEventListener("color-changed", (event) => {
-    // let generatedButton = document.getElementsByClassName("generated-button");
-    // get updated color value
+
+  const btnTextColorPicker = document.querySelector("#btn-text-color-picker");
+  btnTextColorPicker.addEventListener("color-changed", (event) => {
+    const newColor = event.detail.value;
+    console.log(newColor);
+    generatedButton.style.color = newColor;
+  });
+
+  const btnBackGroundColorPicker = document.querySelector(
+    "#btn-background-color-picker"
+  );
+  btnBackGroundColorPicker.addEventListener("color-changed", (event) => {
     const newColor = event.detail.value;
     console.log(newColor);
     generatedButton.style.backgroundColor = newColor;
