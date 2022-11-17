@@ -70,18 +70,24 @@ function makeButton() {
   });
 
   const btnTextColorPicker = document.querySelector("#btn-text-color-picker");
+  const btnTextColorInput = document.querySelector("#btn-text-color-input");
   btnTextColorPicker.addEventListener("color-changed", (event) => {
     const newColor = event.detail.value;
     console.log(newColor);
+    btnTextColorInput.value = newColor;
     generatedButton.style.color = newColor;
   });
 
   const btnBackGroundColorPicker = document.querySelector(
     "#btn-background-color-picker"
   );
+  const btnTextBackgroundColorInput = document.querySelector(
+    "#btn-text-background-color-input"
+  );
   btnBackGroundColorPicker.addEventListener("color-changed", (event) => {
     const newColor = event.detail.value;
     console.log(newColor);
+    btnTextBackgroundColorInput.value = newColor;
     generatedButton.style.backgroundColor = newColor;
   });
 
