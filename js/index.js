@@ -70,11 +70,17 @@ function makeButton() {
   });
 
   const btnTextColorPicker = document.querySelector("#btn-text-color-picker");
+
   const btnTextColorInput = document.querySelector("#btn-text-color-input");
   btnTextColorPicker.addEventListener("color-changed", (event) => {
     const newColor = event.detail.value;
-    console.log(newColor);
     btnTextColorInput.value = newColor;
+    generatedButton.style.color = newColor;
+  });
+
+  btnTextColorInput.addEventListener("blur", () => {
+    let newColor = btnTextColorPicker.value;
+    newColor = btnTextColorInput.value;
     generatedButton.style.color = newColor;
   });
 
@@ -88,6 +94,12 @@ function makeButton() {
     const newColor = event.detail.value;
     console.log(newColor);
     btnTextBackgroundColorInput.value = newColor;
+    generatedButton.style.backgroundColor = newColor;
+  });
+
+  btnTextBackgroundColorInput.addEventListener("blur", () => {
+    let newColor = btnBackGroundColorPicker.value;
+    newColor = btnTextBackgroundColorInput.value;
     generatedButton.style.backgroundColor = newColor;
   });
 
