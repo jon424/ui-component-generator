@@ -56,53 +56,64 @@ function makeButton() {
   buttonDiv.appendChild(generatedButton);
   uiComponentForm.appendChild(generatedButton);
 
-  //gen btn code block
-  const buttonCode = document.createElement("div");
-  buttonCode.classList.add("button-code");
-  buttonDiv.appendChild(buttonCode);
+  //gen btn html code block
+  const buttonHTMLCode = document.createElement("div");
+  buttonHTMLCode.classList.add("button-code");
+  buttonDiv.appendChild(buttonHTMLCode);
   inputBtnText.addEventListener("keyup", () => {
     const inputTextVal = inputBtnText.value;
     generatedButton.innerHTML = inputTextVal;
 
-    buttonCode.innerHTML = `<pre class="language-html"><code class="language-html token tag">
+    buttonHTMLCode.innerHTML = `<pre class="language-html"><code class="language-html token tag">
   <span class="token punctuation">&lt;</span>button<span class="token punctuation">&gt;</span><span style="color: #000;">${inputTextVal}</span><span class="token punctuation">&lt;/</span>button<span class="token punctuation">&gt;</span>
 </code></pre>`;
   });
 
   const btnTextColorPicker = document.querySelector("#btn-text-color-picker");
 
+  //gen btn color code block
+  const buttonTextColorCode = document.createElement("div");
+  buttonTextColorCode.classList.add("button-text-color-code");
+  buttonDiv.appendChild(buttonTextColorCode);
+
   const btnTextColorInput = document.querySelector("#btn-text-color-input");
   btnTextColorPicker.addEventListener("color-changed", (event) => {
     const newColor = event.detail.value;
     btnTextColorInput.value = newColor;
     generatedButton.style.color = newColor;
+
+    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br /><span style="color: #000;">${newColor};</span><br /><span class="token punctuation">}</span>
+    </code></pre>`;
   });
 
   btnTextColorInput.addEventListener("blur", () => {
     let newColor = btnTextColorPicker.value;
     newColor = btnTextColorInput.value;
     generatedButton.style.color = newColor;
+    console.log(btnTextColorInput.value);
+    //BTN color CSS code block goes here:
+    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br /><span style="color: #000;">${btnTextColorInput.value};</span><br /><span class="token punctuation">}</span>
+  </code></pre>`;
   });
 
   const btnBackGroundColorPicker = document.querySelector(
     "#btn-background-color-picker"
   );
-  const btnTextBackgroundColorInput = document.querySelector(
+  const btnBackgroundColorInput = document.querySelector(
     "#btn-text-background-color-input"
   );
   btnBackGroundColorPicker.addEventListener("color-changed", (event) => {
     const newColor = event.detail.value;
     console.log(newColor);
-    btnTextBackgroundColorInput.value = newColor;
+    btnBackgroundColorInput.value = newColor;
     generatedButton.style.backgroundColor = newColor;
+
+    //BTN backgroundColor CSS code block goes here:
   });
 
-  btnTextBackgroundColorInput.addEventListener("blur", () => {
+  btnBackgroundColorInput.addEventListener("blur", () => {
     let newColor = btnBackGroundColorPicker.value;
-    newColor = btnTextBackgroundColorInput.value;
+    newColor = btnBackgroundColorInput.value;
     generatedButton.style.backgroundColor = newColor;
   });
-
-  // get current color value
-  console.log(picker.color);
 }
