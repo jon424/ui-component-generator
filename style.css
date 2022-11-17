@@ -22,6 +22,11 @@ pre {
   display: none;
 }
 
+#multiselect-form {
+  width: max-content;
+  margin: auto;
+}
+
 .multiselect {
   margin: auto;
   width: 200px;
