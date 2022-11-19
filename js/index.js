@@ -85,8 +85,14 @@ function makeButton() {
     generatedButton.style.color = newColor;
 
     buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
-      newColor ? `<span style="color: #000;">color: ${newColor};</span>` : null
-    }<br /><span style="color: #000;">background-color: </span><br /><span class="token punctuation">}</span>
+      backgroundColor
+        ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
+        : ""
+    }${
+      newColor
+        ? `<span style="color: #000;">color: ${newColor};</span><br />`
+        : ""
+    }<span class="token punctuation">}</span>
     </code></pre>`;
   });
 
@@ -97,11 +103,15 @@ function makeButton() {
     console.log(btnTextColorInput.value);
     //BTN color CSS code block goes here:
     buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+      backgroundColor
+        ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
+        : ""
+    }${
       newColor
         ? `<span style="color: #000;">color: ${newColor};</span><br />`
-        : null
+        : ""
     }<span class="token punctuation">}</span>
-  </code></pre>`;
+    </code></pre>`;
   });
 
   const btnBackGroundColorPicker = document.querySelector(
@@ -117,11 +127,32 @@ function makeButton() {
     generatedButton.style.backgroundColor = backgroundColor;
 
     //BTN backgroundColor CSS code block goes here:
+    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+      backgroundColor
+        ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
+        : ""
+    }${
+      newColor
+        ? `<span style="color: #000;">color: ${newColor};</span><br />`
+        : ""
+    }<span class="token punctuation">}</span>
+    </code></pre>`;
   });
 
   btnBackgroundColorInput.addEventListener("blur", () => {
     backgroundColor = btnBackGroundColorPicker.value;
     backgroundColor = btnBackgroundColorInput.value;
     generatedButton.style.backgroundColor = backgroundColor;
+
+    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+      backgroundColor
+        ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
+        : ""
+    }${
+      newColor
+        ? `<span style="color: #000;">color: ${newColor};</span><br />`
+        : ""
+    }<span class="token punctuation">}</span>
+    </code></pre>`;
   });
 }
