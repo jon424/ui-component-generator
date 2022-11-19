@@ -45,6 +45,7 @@ function makeButton() {
   const previousBtnCode = document.getElementsByClassName("button-code");
   const inputBtnText = document.getElementById("button-text");
   let newColor;
+  let backgroundColor;
   while (previousBtn.length > 0 && previousBtnCode.length > 0) {
     previousBtn[0].parentNode.removeChild(previousBtn[0]);
     previousBtnCode[0].parentNode.removeChild(previousBtnCode[0]);
@@ -95,7 +96,11 @@ function makeButton() {
     generatedButton.style.color = newColor;
     console.log(btnTextColorInput.value);
     //BTN color CSS code block goes here:
-    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br /><span style="color: #000;">${btnTextColorInput.value};</span><br /><span class="token punctuation">}</span>
+    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+      newColor
+        ? `<span style="color: #000;">color: ${newColor};</span><br />`
+        : null
+    }<span class="token punctuation">}</span>
   </code></pre>`;
   });
 
@@ -106,17 +111,17 @@ function makeButton() {
     "#btn-text-background-color-input"
   );
   btnBackGroundColorPicker.addEventListener("color-changed", (event) => {
-    const newColor = event.detail.value;
-    console.log(newColor);
-    btnBackgroundColorInput.value = newColor;
-    generatedButton.style.backgroundColor = newColor;
+    backgroundColor = event.detail.value;
+    console.log(backgroundColor);
+    btnBackgroundColorInput.value = backgroundColor;
+    generatedButton.style.backgroundColor = backgroundColor;
 
     //BTN backgroundColor CSS code block goes here:
   });
 
   btnBackgroundColorInput.addEventListener("blur", () => {
-    let newColor = btnBackGroundColorPicker.value;
-    newColor = btnBackgroundColorInput.value;
-    generatedButton.style.backgroundColor = newColor;
+    backgroundColor = btnBackGroundColorPicker.value;
+    backgroundColor = btnBackgroundColorInput.value;
+    generatedButton.style.backgroundColor = backgroundColor;
   });
 }
