@@ -82,7 +82,7 @@ function makeButton() {
     btnTextColorInput.value = newColor;
     generatedButton.style.color = newColor;
 
-    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br /><span style="color: #000;">${newColor};</span><br /><span class="token punctuation">}</span>
+    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br /><span style="color: #000;">color: ${newColor};</span><br /><span class="token punctuation">}</span>
     </code></pre>`;
   });
 
