@@ -44,6 +44,7 @@ function makeButton() {
   const previousBtn = document.getElementsByClassName("generated-button");
   const previousBtnCode = document.getElementsByClassName("button-code");
   const inputBtnText = document.getElementById("button-text");
+  let newColor;
   while (previousBtn.length > 0 && previousBtnCode.length > 0) {
     previousBtn[0].parentNode.removeChild(previousBtn[0]);
     previousBtnCode[0].parentNode.removeChild(previousBtnCode[0]);
@@ -78,11 +79,13 @@ function makeButton() {
 
   const btnTextColorInput = document.querySelector("#btn-text-color-input");
   btnTextColorPicker.addEventListener("color-changed", (event) => {
-    const newColor = event.detail.value;
+    newColor = event.detail.value;
     btnTextColorInput.value = newColor;
     generatedButton.style.color = newColor;
 
-    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br /><span style="color: #000;">color: ${newColor};</span><br /><span class="token punctuation">}</span>
+    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+      newColor ? `<span style="color: #000;">color: ${newColor};</span>` : null
+    }<br /><span style="color: #000;">background-color: </span><br /><span class="token punctuation">}</span>
     </code></pre>`;
   });
 
