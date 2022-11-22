@@ -7,6 +7,7 @@ let uiComponentForm = document.getElementById("ui-component-form");
 function selectChanged() {
   if (sel.value == "button") {
     buttonDiv.style.display = "block";
+    buttonDiv.style.border = "3px solid gold";
     this.makeButton();
   } else {
     buttonDiv.style.display = "none";
@@ -43,12 +44,22 @@ function makeButton() {
   //remove button if it exists
   const previousBtn = document.getElementsByClassName("generated-button");
   const previousBtnCode = document.getElementsByClassName("button-code");
+  const buttonTextColorCodeBlocks = document.getElementsByClassName(
+    "button-text-color-code"
+  );
   const inputBtnText = document.getElementById("button-text");
   let newColor;
   let backgroundColor;
-  while (previousBtn.length > 0 && previousBtnCode.length > 0) {
+  while (
+    previousBtn.length > 0 &&
+    previousBtnCode.length > 0 &&
+    buttonTextColorCodeBlocks.length > 0
+  ) {
     previousBtn[0].parentNode.removeChild(previousBtn[0]);
     previousBtnCode[0].parentNode.removeChild(previousBtnCode[0]);
+    buttonTextColorCodeBlocks[0].parentNode.removeChild(
+      buttonTextColorCodeBlocks[0]
+    );
     inputBtnText.value = "";
   }
 
@@ -56,7 +67,7 @@ function makeButton() {
   const generatedButton = document.createElement("button");
   generatedButton.classList.add("generated-button");
   buttonDiv.appendChild(generatedButton);
-  uiComponentForm.appendChild(generatedButton);
+  buttonDiv.prepend(generatedButton);
 
   //gen btn html code block
   const buttonHTMLCode = document.createElement("div");
