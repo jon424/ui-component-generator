@@ -63,8 +63,7 @@ function makeButton() {
     const inputTextVal = inputBtnText.value;
     generatedButton.innerHTML = inputTextVal;
 
-    buttonHTMLCode.innerHTML = `<pre class="language-html"><code class="language-html token tag">
-  <span class="token punctuation">&lt;</span>button<span class="token punctuation">&gt;</span><span style="color: #000;">${inputTextVal}</span><span class="token punctuation">&lt;/</span>button<span class="token punctuation">&gt;</span>
+    buttonHTMLCode.innerHTML = `<p>HTML</p><pre class="language-html"><code class="language-html token tag"><span class="token punctuation">&lt;</span>button<span class="token punctuation">&gt;</span><span style="color: #000;">${inputTextVal}</span><span class="token punctuation">&lt;/</span>button<span class="token punctuation">&gt;</span>
 </code></pre>`;
   });
 
@@ -81,7 +80,7 @@ function makeButton() {
     btnTextColorInput.value = newColor;
     generatedButton.style.color = newColor;
 
-    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+    buttonTextColorCode.innerHTML = `<p>CSS</p><pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
       backgroundColor
         ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
         : ""
@@ -99,7 +98,7 @@ function makeButton() {
     generatedButton.style.color = newColor;
     console.log(btnTextColorInput.value);
     //BTN color CSS code block goes here:
-    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+    buttonTextColorCode.innerHTML = `<p>CSS</p><pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
       backgroundColor
         ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
         : ""
@@ -124,7 +123,7 @@ function makeButton() {
     generatedButton.style.backgroundColor = backgroundColor;
 
     //BTN backgroundColor CSS code block goes here:
-    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+    buttonTextColorCode.innerHTML = `<p>CSS</p><pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
       backgroundColor
         ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
         : ""
@@ -141,7 +140,7 @@ function makeButton() {
     backgroundColor = btnBackgroundColorInput.value;
     generatedButton.style.backgroundColor = backgroundColor;
 
-    buttonTextColorCode.innerHTML = `<pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
+    buttonTextColorCode.innerHTML = `<p>CSS</p><pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
       backgroundColor
         ? `<span style="color: #000;">background-color: ${backgroundColor} </span><br />`
         : ""
