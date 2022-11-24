@@ -55,6 +55,9 @@ function makeButton() {
   buttonDiv.appendChild(generatedButton);
   buttonDiv.prepend(generatedButton);
 
+  // margin/padding
+  // label: Margin <input type="text (number)" /> <dropdown (px, em, etc...)> <button>+</button> <button>-</button> UP TO FOUR for the margin args
+
   //gen btn html code block
   const buttonHTMLCode = document.createElement("div");
   buttonHTMLCode.classList.add("button-code");
