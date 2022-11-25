@@ -39,6 +39,60 @@ function showCheckboxes(event) {
   }
 }
 
+function incDecPaddingValControls() {
+  let count = 1;
+  const addBtn = document.getElementById("addBtn");
+  const subtractBtn = document.getElementById("subtractBtn");
+
+  let secondInput = document.querySelectorAll("#padding-input-2")[0];
+  let secondSelect = document.querySelectorAll("#padding-select-2")[0];
+  let thirdInput = document.querySelectorAll("#padding-input-3")[0];
+  let thirdSelect = document.querySelectorAll("#padding-select-3")[0];
+  let fourthInput = document.querySelectorAll("#padding-input-4")[0];
+  let fourthSelect = document.querySelectorAll("#padding-select-4")[0];
+
+  secondInput.style.display = "inline-block";
+  secondSelect.style.display = "inline-block";
+
+  addBtn.onclick = () => {
+    count++;
+    console.log("COUNT: ", count);
+
+    if (count === 1) {
+      secondInput.style.display = "inline-block";
+      secondSelect.style.display = "inline-block";
+    } else if (count === 2) {
+      thirdInput.style.display = "inline-block";
+      thirdSelect.style.display = "inline-block";
+    } else if (count === 3) {
+      fourthInput.style.display = "inline-block";
+      fourthSelect.style.display = "inline-block";
+    }
+  };
+
+  subtractBtn.onclick = () => {
+    if (count <= 0) {
+      count = 0;
+    }
+    if (count > 3) {
+      count = 3;
+    }
+    if (count >= 3) {
+      fourthInput.style.display = "none";
+      fourthSelect.style.display = "none";
+      count--;
+    } else if (count >= 2 && thirdInput.style.display === "inline-block") {
+      thirdInput.style.display = "none";
+      thirdSelect.style.display = "none";
+      count--;
+    } else if (count >= 1 && secondInput.style.display === "inline-block") {
+      secondInput.style.display = "none";
+      secondSelect.style.display = "none";
+      count = 0;
+    }
+  };
+}
+
 function makeButton() {
   //remove button if it exists
   const previousBtn = document.getElementsByClassName("generated-button");
@@ -55,7 +109,7 @@ function makeButton() {
   buttonDiv.appendChild(generatedButton);
   buttonDiv.prepend(generatedButton);
 
-  // margin/padding
+  // padding
   // label: Margin <input type="text (number)" /> <dropdown (px, em, etc...)> <button>+</button> <button>-</button> UP TO FOUR for the margin args
 
   //gen btn html code block

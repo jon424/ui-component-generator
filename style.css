@@ -56,6 +56,15 @@ pre {
   background-color: #1e90ff;
 }
 
+#padding-select-2,
+#padding-input-2,
+#padding-select-3,
+#padding-input-3,
+#padding-select-4,
+#padding-input-4 {
+  display: none;
+}
+
 #btn-background-color-picker,
 #btn-text-color-picker {
   height: 150px;

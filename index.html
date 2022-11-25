@@ -63,6 +63,66 @@
           </form>
           </div>
 
+
+          <!--button padding-->
+          <form >
+            <label for="component-type">Padding</label>
+            
+            <input id="padding-input-1" class="padding-input" type="number" />
+            <select
+            id="padding-select-1"
+            class="padding-select"
+              class="list-components"
+              onchange="setBtnPadding()"
+            >
+              <option value="px">px</option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+
+
+            <input id="padding-input-2" class="padding-input" type="number" />
+            <select
+            id="padding-select-2"
+            class="padding-select"
+              class="list-components"
+              onchange="setBtnPadding()"
+            >
+              <option value="px">px</option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+
+
+            <input id="padding-input-3" class="padding-input" type="number" />
+            <select
+            id="padding-select-3"
+            class="padding-select"
+              class="list-components"
+              onchange="setBtnPadding()"
+            >
+              <option value="px">px</option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+
+
+            <input id="padding-input-4" class="padding-input" type="number" />
+            <select
+            id="padding-select-4"
+            class="padding-select"
+              class="list-components"
+              onchange="setBtnPadding()"
+            >
+              <option value="px">px</option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+
+
+            <button type="button" id="addBtn" onclick="incDecPaddingValControls()">+</button><button type="button" id="subtractBtn">-</button>
+          </form>
+
           <div>
             <label>Text Color</label><input type="text" id="btn-text-color-input" />
           <hex-color-picker id="btn-text-color-picker" color="#1e88e5"></hex-color-picker>
