@@ -17,7 +17,6 @@ function selectChanged() {
 //multi-select dropdown menu
 let expanded = false;
 function showCheckboxes(event) {
-  console.log(event.target.classList);
   let checkboxes = document.getElementById("checkboxes");
 
   if (
@@ -35,7 +34,6 @@ function showCheckboxes(event) {
   } else {
     checkboxes.style.display = "none";
     expanded = false;
-    console.log(expanded);
   }
 }
 
@@ -56,7 +54,6 @@ function incDecPaddingValControls() {
 
   addBtn.onclick = () => {
     count++;
-    console.log("COUNT: ", count);
 
     if (count === 1) {
       secondInput.style.display = "inline-block";
@@ -153,7 +150,6 @@ function makeButton() {
     let newColor = btnTextColorPicker.value;
     newColor = btnTextColorInput.value;
     generatedButton.style.color = newColor;
-    console.log(btnTextColorInput.value);
     //BTN color CSS code block goes here:
     buttonTextColorCode.innerHTML = `<p>CSS</p><pre class="language-html"><code class="language-css token tag"></span>button<span class="token punctuation">{</span><br />${
       backgroundColor
@@ -175,7 +171,6 @@ function makeButton() {
   );
   btnBackGroundColorPicker.addEventListener("color-changed", (event) => {
     backgroundColor = event.detail.value;
-    console.log(backgroundColor);
     btnBackgroundColorInput.value = backgroundColor;
     generatedButton.style.backgroundColor = backgroundColor;
 
