@@ -90,6 +90,8 @@ function incDecPaddingValControls() {
   };
 }
 
+let buttonPadding;
+
 function makeButton() {
   //remove button if it exists
   const previousBtn = document.getElementsByClassName("generated-button");
