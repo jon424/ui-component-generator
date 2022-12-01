@@ -37,6 +37,8 @@ function showCheckboxes(event) {
   }
 }
 
+let buttonPadding;
+
 function incDecPaddingValControls() {
   let count = 1;
   const addBtn = document.getElementById("addBtn");
@@ -90,8 +92,6 @@ function incDecPaddingValControls() {
   };
 }
 
-let buttonPadding;
-
 function makeButton() {
   //remove button if it exists
   const previousBtn = document.getElementsByClassName("generated-button");
@@ -109,6 +109,7 @@ function makeButton() {
   buttonDiv.prepend(generatedButton);
 
   // padding goes here...
+  // value of one input + value of second input (px, em,...)
   generatedButton.style.padding = buttonPadding;
 
   //gen btn html code block
